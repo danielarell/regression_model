@@ -16,8 +16,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 # 1. Load dataset
 # =========================
 
-data_path = "./insurance.csv"
-df = pd.read_csv(data_path)
+df = pd.read_csv("insurance.csv")
 
 # =========================
 # 2. Preprocessing
@@ -70,14 +69,12 @@ else:
 # 6. Save report as CSV
 # =========================
 
-os.makedirs("../results", exist_ok=True)
-
 report = pd.DataFrame({
     "MSE": [mse],
     "RMSE": [rmse],
     "R2_Score": [r2]
 })
 
-report.to_csv("../results/report.csv", index=False)
+report.to_csv("report.csv", index=False)
 
-print("Report saved to results/report.csv")
+print("Report saved to report.csv")
